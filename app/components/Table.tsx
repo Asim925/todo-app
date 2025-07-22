@@ -18,9 +18,9 @@ interface Props {
 const Table = ({ todos, currentPage }: Props) => {
   const [data, setData] = useState<Data[]>(todos);
 
-  let tableHead = ["ID", "User ID", "Title", "Completion", "Delete"];
+  const tableHead = ["ID", "User ID", "Title", "Completion", "Delete"];
 
-  let handleDelete = (id: number) => {
+  const handleDelete = (id: number) => {
     setData(data.filter((item) => item.id !== id));
   };
 
@@ -32,21 +32,21 @@ const Table = ({ todos, currentPage }: Props) => {
   return (
     <div className="w-full">
       <div>
-        <h1 className="text-center w-full mt-10 text-5xl font-extrabold">
+        <h1 className="text-center w-full text-5xl font-extrabold">
           JSON Placeholder
         </h1>
         <p className="md:text-center px-10 lg:px-20 py-10 text-xl leading-8">
-          In this app, I worked with the TODOS section of the JSONPlaceholder
-          API to display and manage data in a dynamic table. I practiced
-          deleting table items on the client side without affecting the original
-          data source, implemented conditional rendering to handle UI behavior
-          based on item states, and applied custom color styling to buttons and
-          table rows for better visual feedback. A key focus was implementing
-          server-side pagination using dynamic route segments in Next.js
-          (/todos/[page]), allowing seamless navigation between pages while
-          keeping the data fetch logic on the server for better performance and
-          clarity. This project helped reinforce my understanding of server
-          components, client interactions, and Next.js routing.
+          🚀 In this project, I worked with the TODOS section of the
+          JSONPlaceholder API to build a dynamic and interactive table. 🧹 I
+          implemented client-side deletion of table items without modifying the
+          original data source. 🎯 Used conditional rendering to control UI
+          behavior based on item state (like completed/not completed). 🎨
+          Applied custom color styling to buttons and rows for better visual
+          feedback. 📄 Built pagination using dynamic route segments in Next.js
+          (/todos/[page]) to navigate between pages. ⚡ Data fetching was
+          handled on the server to improve performance and keep the logic clean.
+          🔧 This project helped reinforce my understanding of server
+          components, client interactions, and Next.js App Router fundamentals.
         </p>
       </div>
 

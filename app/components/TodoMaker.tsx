@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Data } from "./Table";
 
 interface Props {
@@ -9,27 +9,20 @@ interface Props {
 let length = 200;
 
 const TodoMaker = ({ getTodo }: Props) => {
-  let titleRef = useRef<HTMLInputElement>(null);
+  const titleRef = useRef<HTMLInputElement>(null);
 
-  let [completed, setCompleted] = useState(false);
+  const [completed, setCompleted] = useState(false);
 
-  let [todo, setTodo] = useState({
-    id: 0,
-    userId: 0,
-    title: "",
-    completed: false,
-  });
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (titleRef.current?.value) {
-      let newTodo = {
+      const newTodo = {
         id: length + 1,
         userId: length + 11,
         title: titleRef.current?.value,
         completed: completed,
       };
-      setTodo(newTodo);
+
       getTodo(newTodo);
 
       length += 1;
@@ -37,8 +30,6 @@ const TodoMaker = ({ getTodo }: Props) => {
       setCompleted(false);
     }
   };
-
-  // useEffect(() => {}, [todo]);
 
   return (
     <>
