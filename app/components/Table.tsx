@@ -32,7 +32,7 @@ const Table = ({ todos, currentPage }: Props) => {
   return (
     <div className="w-full">
       <div>
-        <h1 className="text-center w-full text-5xl font-extrabold">
+        <h1 className="text-center w-full mt-10 text-5xl font-extrabold">
           JSON Placeholder
         </h1>
         <p className="md:text-center px-10 lg:px-20 py-10 text-xl leading-8">
